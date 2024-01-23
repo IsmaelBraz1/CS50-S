@@ -18,6 +18,10 @@ function Bird:update(dt)
     self.dy = self.dy + GRAVITY*dt
     self.y = self.y + self.dy
 
+    if love.keyboard.wasPressed('space') then
+        self.dy = -5
+    end
+
     if self.y > VIRTUAL_HEIGHT - self.height - 16 then
         self.y = VIRTUAL_HEIGHT - self.height -16
     end
